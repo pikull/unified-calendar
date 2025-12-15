@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unify - Fremont Unified School Calendar</title>
+    
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+<body>
+
+    <div class="header">
+        <div class="header-left">
+            <h1 class = "h2text">Unify</h1>
+        </div>
+    
+        <nav class="main-nav">
+            <a href="index.html" class="nav-link">Calendar</a>
+            <a href="clubs.html" class="nav-link active">Club List</a>
+        </nav>
+        
+        <div class="header-right" style="display: flex; gap: 10px; align-items: center;">
+             <button id="profile-btn" class="profile-btn" style="display: none;" onclick="openProfileEditor()">Profile</button>
+             <button id="logout-btn" class="logout-btn" style="display: none;">Logout</button>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <h2 class = "h2text">All Clubs</h2>
+        <div id="clubs-directory" class="club-grid">
+            <p>Loading clubs...</p>
+        </div>
+    </div>
+
+    <div id="login-overlay" class="fullscreen-overlay" style="display: none;">
+        <div class="login-box">
+            <h1>Welcome</h1>
+            <button id="google-login-btn" class="google-btn">Sign in with Google</button>
+        </div>
+    </div>
+
+    <h1 class = "h2text">Instagram Posts</h1>
+    <h2 class = "h2text">Computer Science Club</h2>
+    <div id="isntagramcontainer">
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DOeHmWikfi5/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14">
+            </blockquote>
+
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DSIgNoJEeB9/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14">
+            </blockquote>
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DQXqR38kidB/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14">
+            </blockquote>
+            
+    </div>
+    <h2 class = "h2text">DECA</h2>
+    <div id="isntagramcontainer">
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DG_1mEsyuRn/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14">
+            </blockquote>
+
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DBKtQ43v-qo/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14"></blockquote>
+
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DSHLskJkTNt/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14">
+            </blockquote>
+            
+    </div>
+
+    <script async src="//www.instagram.com/embed.js"></script>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

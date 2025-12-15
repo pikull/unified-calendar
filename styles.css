@@ -1,0 +1,970 @@
+:root {
+    /* Irvington / FUSD Official Style Colors */
+    --primary: #003875;
+    /* Irvington Navy Blue */
+    --primary-hover: #002a5c;
+    /* Darker Navy */
+    --accent: #4A90E2;
+    /* Lighter Blue for highlights */
+    --secondary: #F4F4F4;
+    /* Light Grey for backgrounds */
+    --bg: #FFFFFF;
+    --text: #2D3748;
+    /* Dark slate for readable text */
+    --grey: #D1D5DB;
+    --light-grey: #F9FAFB;
+    --white: #FFFFFF;
+}
+.h2text{
+    text-align: center !important;
+}
+#main-container{
+    padding:15px;
+    display:flex;
+    width:100%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+#main-container h2 h1{
+    align-items:center;
+}
+html,
+body {
+    height: 100%;
+    width: 100%;
+    background-color: #f4f4f4;
+    color: #333;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background: var(--secondary);
+    color: var(--text);
+    /* CHANGED: Remove padding/margin so header touches edges */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* --- OVERLAYS --- */
+.fullscreen-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 56, 117, 0.9);
+    /* Navy tinted overlay */
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+}
+
+.login-box,
+.onboarding-box {
+    background: white;
+    padding: 40px;
+    border-radius: 8px;
+    /* Sharper corners for professional look */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+    border-top: 5px solid var(--primary);
+    /* School brand bar on top */
+}
+
+.google-btn {
+    background-color: #4285F4;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-weight: 600;
+}
+
+/* --- HEADER --- */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 20px 30px;
+    background: var(--primary);
+    /* Solid Navy Header */
+    color: white;
+
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header-left h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: white;
+    /* White text on Navy */
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+/* --- NAVIGATION --- */
+.main-nav {
+    display: flex;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    /* Transparent white */
+    padding: 5px;
+    border-radius: 6px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+
+.nav-link.active {
+    background: white;
+    color: var(--primary);
+    /* Blue text on white button */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.header-right {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+/* --- TOGGLES & BUTTONS --- */
+.toggle-container {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    padding: 4px;
+    border: none;
+}
+
+.toggle-btn {
+    border: none;
+    background: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.toggle-btn.active {
+    background: var(--accent);
+    /* Lighter blue highlight */
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* General Buttons (Add, Profile, Logout) */
+.add-btn,
+.profile-btn {
+    background: white;
+    color: var(--primary);
+    border: none;
+    padding: 8px 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.add-btn:hover,
+.profile-btn:hover {
+    background: var(--secondary);
+    transform: translateY(-1px);
+}
+
+.logout-btn {
+    background: transparent;
+    border: 1px solid rgba(255, 77, 77, 0.7);
+    color: #ffcccc;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.logout-btn:hover {
+    background: #ff4d4d;
+    color: white;
+    border-color: #ff4d4d;
+}
+
+/* --- CALENDAR --- */
+.calendar-wrapper {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    max-width: 1000px;
+    margin: 0 auto;
+    border-top: 4px solid var(--primary);
+    /* Matching branding */
+}
+
+.cal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    border-bottom: 2px solid var(--secondary);
+    padding-bottom: 15px;
+}
+
+.nav-btn {
+    background: var(--primary);
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    color: white;
+    transition: all 0.2s ease;
+}
+
+.nav-btn:hover {
+    background: var(--primary-hover);
+}
+
+.cal-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1px;
+    /* Tighter grid */
+    background: var(--grey);
+    /* Creates borders between cells */
+    border: 1px solid var(--grey);
+}
+
+.day-name {
+    text-align: center;
+    font-weight: 700;
+    color: var(--primary);
+    background: white;
+    padding: 10px 0;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    overflow: hidden;
+}
+
+.day-cell {
+    min-height: 120px;
+    background: var(--white);
+    padding: 8px;
+    position: relative;
+    transition: background 0.2s ease;
+}
+
+.day-cell:hover {
+    background: #f8fbff;
+}
+
+/* FIX: Keep spirit image when hovering over today */
+.day-cell.today:hover {
+    background: 
+        /* Change the tint slightly blue to show interaction */
+        linear-gradient(rgba(230, 242, 255, 0.8), rgba(230, 242, 255, 0.8)),
+        url('spirit.png');
+    
+    /* You must repeat these because 'background' is a shorthand property */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    
+    border-color: var(--primary) !important;
+}
+.day-cell.other-month {
+    background: #f9fafb;
+    color: #ccc;
+}
+
+.day-number {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    display: block;
+    color: var(--text);
+}
+
+
+/* --- EVENT CHIPS --- */
+.event-chip {
+    font-size: 11px;
+    background: var(--primary);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 3px;
+    /* Squarer look */
+    margin-bottom: 4px;
+    cursor: pointer;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-left: 3px solid var(--accent);
+    transition: all 0.2s ease;
+}
+
+.event-chip:hover {
+    transform: translateX(2px);
+    opacity: 0.9;
+}
+
+/* --- CLUBS DIRECTORY --- */
+.club-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px 20px;
+}
+
+.club-card {
+    background: white;
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--grey);
+    border-top: 4px solid var(--primary);
+    /* School Accent */
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.club-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.club-card h3 {
+    margin-top: 0;
+    color: var(--primary);
+    font-size: 1.25rem;
+}
+
+.tag-badge {
+    display: inline-block;
+    background: var(--secondary);
+    color: var(--text);
+    font-size: 0.75rem;
+    padding: 4px 8px;
+    border-radius: 4px;
+    margin-right: 5px;
+    margin-top: 10px;
+    font-weight: 600;
+    border: 1px solid var(--grey);
+}
+
+#eventPopup {
+    display: none;
+}
+
+#finish-onboarding-btn {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 4px;
+    width: 100%;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+#addToCalendarBtn {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 4px;
+    width: 100%;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+#deleteEventBtn {
+    text-align: center !important;
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 4px;
+    width: 100%;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+/* --- POPUPS --- */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(2px);
+}
+
+.popup-content {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    max-width: 450px;
+    width: 90%;
+    position: relative;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    border-top: 6px solid var(--primary);
+}
+
+#addEventOverlay {
+    display: none;
+}
+#addEventForm{
+    padding:0px;
+}
+/* Form Styles */
+#addEventForm input[type="text"],
+#addEventForm input[type="date"],
+#addEventForm input[type="time"],
+#addEventForm textarea {
+    padding: 10px;
+    border: 1px solid var(--grey);
+    border-radius: 4px;
+    width: 95%;
+    margin-bottom: 10px;
+    font-family: inherit;
+}
+
+#addEventForm button[type="submit"] {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 4px;
+    width: 100%;
+    font-weight: 600;
+    margin-top: 10px;
+}
+#toast {
+    visibility: hidden;
+    min-width: 250px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 4px;
+    padding: 16px;
+    position: fixed;
+    z-index: 10000;
+    left: 50%;
+    bottom: 30px;
+    transform: translateX(-50%);
+    font-size: 17px;
+    opacity: 0;
+    transition: opacity 0.5s, bottom 0.5s;
+}
+
+#toast.show {
+    visibility: visible;
+    opacity: 1;
+    bottom: 50px;
+}
+.today {
+    /* 1. The School Spirit Background */
+    background: 
+        /* Top layer: 85% opaque white to fade the image */
+        linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)),
+        /* Bottom layer: The Logo */
+        url('spirit.png');
+    
+    /* 2. Positioning the Logo */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100%; /* Adjusts how big the logo is inside the square */
+    
+    /* 3. Your Existing Blue Border styles */
+    border: 2px solid var(--primary) !important; /* Force the blue border */
+    box-shadow: inset 0 0 0 1px var(--primary); /* Inner glow */
+    position: relative;
+}
+
+/* Optional: Make the day number stand out more */
+.today .day-number {
+    background: var(--primary);
+    color: white;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+/* Onboarding */
+.tag-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.tag-btn {
+    padding: 8px 16px;
+    border: 1px solid var(--grey);
+    border-radius: 20px;
+    background: white;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.tag-btn.selected {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: white;
+}
+
+/* Instagram Container Fix */
+#isntagramcontainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    margin-top: 20px;
+    
+    padding-bottom: 20px;
+}
+
+.instagram-media {
+    width: auto !important;
+    flex: 1 1 50% !important;
+    max-width: 500px !important;
+    min-width: 300px !important;
+    margin: 0 !important;
+    border: 1px solid var(--grey) !important;
+    border-radius: 8px !important;
+}
+
+.close-btn {
+    /* Change position from right: 20px to left: 20px */
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    /* NEW: Left align the button */
+    /* Remove 'right' property: right: 20px; */
+
+    font-size: 28px;
+    cursor: pointer;
+    color: #666;
+    transition: color 0.2s ease;
+    background: none;
+    border: none;
+    padding: 0;
+    font-family: inherit;
+}
+
+.close-btn:hover {
+    color: var(--primary);
+}
+
+@media (max-width: 768px) {
+    #isntagramcontainer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .cal-grid {
+        font-size: 0.8rem;
+    }
+}
+
+/* Floating Button */
+.chat-fab {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    z-index: 2000;
+    transition: transform 0.2s;
+}
+
+.chat-fab:hover {
+    transform: scale(1.1);
+}
+
+/* Chat Window */
+.chat-window {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 350px;
+    height: 500px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    z-index: 2000;
+    border: 1px solid var(--grey);
+    overflow: hidden;
+}
+
+.chat-header {
+    background: var(--primary);
+    color: white;
+    padding: 15px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-messages {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    background: var(--secondary);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.message {
+    max-width: 80%;
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.bot-message {
+    background: white;
+    color: var(--text);
+    border: 1px solid var(--grey);
+    align-self: flex-start;
+}
+
+.user-message {
+    background: var(--accent);
+    color: white;
+    align-self: flex-end;
+}
+
+.chat-input-area {
+    padding: 10px;
+    background: white;
+    border-top: 1px solid var(--grey);
+    display: flex;
+    gap: 10px;
+}
+
+/* Recommendation Box (The Magic Part) */
+.recommendation-box {
+    background: #e3f2fd;
+    border: 1px solid #90caf9;
+    border-radius: 8px;
+    padding: 10px;
+    margin-top: 5px;
+}
+
+.rec-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 5px 0;
+    background: white;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+.rec-add-btn {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    width: 100%;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+/* --- IRVINGTON STYLE FOOTER --- */
+.irvington-footer {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin-top: 50px;
+    width: 100%;
+}
+
+/* UPPER SECTION (Grey) */
+.footer-upper {
+    background-color: #F4F4F4; /* Light Grey matching screenshot */
+    color: var(--primary);     /* Navy Text */
+    padding: 50px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 250px;
+}
+
+/* Brand Column (Left) */
+.brand-column {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-logo-text {
+    font-size: 2rem;
+    font-weight: 800;
+    margin: 0;
+    color: var(--primary);
+}
+
+.footer-subtext {
+    font-size: 1.2rem;
+    font-family: serif; /* "Home of the Vikings" style */
+    margin: 5px 0 20px 0;
+    color: var(--primary);
+}
+
+.footer-viking-logo {
+    height: 100px; /* Adjust based on your spirit.png */
+    width: auto;
+    margin-bottom: 15px;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.social-circle {
+    background-color: var(--primary);
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 14px;
+    transition: transform 0.2s;
+}
+.social-circle:hover { transform: scale(1.1); }
+
+/* Info & Contact Columns (Right) */
+.info-column, .contact-column {
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.footer-row {
+    display: flex;
+    align-items: center; /* Aligns icon with text */
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.icon-circle {
+    background-color: var(--primary);
+    color: white;
+    min-width: 30px; /* Fixed width prevents squishing */
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+.footer-row a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+}
+.footer-row a:hover { text-decoration: underline; }
+
+/* LOWER SECTION (Blue Bar) */
+.footer-lower {
+    background-color: var(--primary); /* Navy Blue */
+    color: white;
+    padding: 30px 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.district-brand h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.district-socials {
+    display: flex;
+    gap: 10px;
+}
+
+.social-white {
+    background: white;
+    color: var(--primary);
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.district-links {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.link-col {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.link-col a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.link-col a:hover { text-decoration: underline; }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .footer-upper { text-align: center; }
+    .footer-row { justify-content: center; } /* Center items on mobile */
+    .footer-lower { flex-direction: column; text-align: center; }
+    .district-links { flex-direction: column; gap: 15px; }
+}
+.rsvp-btn {
+    background: white;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Viking Icon inside the button */
+.viking-icon {
+    
+    width: 24px;       /* Good icon size */
+    height: 24px;
+    object-fit: contain;
+    transition: all 0.2s ease;
+}
+
+/* When not going, make it gray and slightly transparent */
+.viking-icon.faded {
+    width: 24px;       /* Good icon size */
+    height: 24px;
+    filter: grayscale(100%);
+    opacity: 0.6;
+}
+
+
+.rsvp-btn:hover {
+    background: #f0f8ff;
+    transform: scale(1.05);
+}
+
+.rsvp-btn.active-rsvp {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+.share-btn {
+    background: transparent;
+    border: 1px solid var(--primary); /* Navy Blue border */
+    color: var(--primary);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.share-btn:hover {
+    background: var(--primary);
+    color: white;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Ensure the container looks neat */
+#rsvp-section {
+    width: 100%;
+    box-sizing: border-box; /* Prevents padding from breaking layout */
+}

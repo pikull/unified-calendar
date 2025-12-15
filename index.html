@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Unify - Fremont Unified School Calendar</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+
+  <!-- update the version number as needed -->
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+
+</head>
+
+<body>
+  <div id="toast">Some text message..</div>
+  <div id="login-overlay" class="fullscreen-overlay">
+    <div class="login-box">
+      <h1>Welcome to Unify</h1>
+      <p>Connect with your school community.</p>
+      <button id="google-login-btn" class="google-btn">
+        Sign in with Google
+      </button>
+    </div>
+  </div>
+
+  <div id="onboarding-overlay" class="fullscreen-overlay" style="display: none;">
+    <div class="onboarding-box">
+      <h2>Choose Your Vibe</h2>
+      <p>Select tags to auto-join clubs, or pick specific ones below.</p>
+
+      <div id="tag-container" class="tag-container">
+      </div>
+
+      <hr>
+
+      <div id="club-selection-list" class="club-list">
+      </div>
+
+      <button id="finish-onboarding-btn" class="primary-btn">Get Started</button>
+    </div>
+  </div>
+
+  
+  <div class="header">
+    <div class="header-left">
+        <h1>Unify</h1>
+    </div>
+
+    <nav class="main-nav">
+        <a href="index.html" class="nav-link active">Calendar</a>
+        <a href="clubs.html" class="nav-link">Club List</a>
+    </nav>
+    
+    <div class="header-right" style="display: flex; gap: 10px; align-items: center;">
+        <div class="toggle-container">
+            <button class="toggle-btn active" onclick="switchView('my_feed')">My Feed</button>
+            <button class="toggle-btn" onclick="switchView('explore')">ALL</button>
+        </div>
+        
+        <button id="admin-add-btn" class="add-btn" style="display: none;" onclick="openAddEventForm()">+ Add Event</button>
+        <button id="profile-btn" class="profile-btn" style="display: none;" onclick="openProfileEditor()">Profile</button>
+        <button id="logout-btn" class="logout-btn" style="display: none;">Logout</button>
+    </div>
+</div>
+
+  <div class=" calendar-wrapper">
+    <div class="cal-header">
+      <button class="nav-btn" onclick="changeMonth(-1)">&#9664;</button>
+      <h2 id="monthYearDisplay">Loading...</h2>
+      <button class="nav-btn" onclick="changeMonth(1)">&#9654;</button>
+    </div>
+
+    <div class="cal-grid" id="calendarGrid">
+    </div>
+  </div>
+
+  <div id="eventPopup" class="popup-overlay">
+    <div class="popup-content">
+      <div class="close-div">
+      <button type="button" class="close-btn" id="eventClose" onclick="hideEventPopup()">&times;</button>
+      </div>
+      <h3 id="popupTitle"></h3>
+      <p><strong>Club:</strong> <span id="popupClub"></span></p>
+      <p><strong>Description:</strong> <span id="popupDescription"></span></p>
+      <p><strong>Location:</strong> <span id="popupLocation"></span></p>
+      <p><strong>Date:</strong> <span id="popupDate"></span></p>
+      <p><strong>Start Time:</strong> <span id="popupStartTime"></span></p>
+      <p><strong>End Time:</strong> <span id="popupEndTime"></span></p>
+      <h3 id="popupTitle"></h3>
+      
+
+      <div id="rsvp-section"></div>
+      <button type="button" id="deleteEventBtn">Delete Event</button>
+      <button type="button" id="addToCalendarBtn">Add to Google Calendar</button>
+    </div>
+  </div>
+
+  <div id="addEventOverlay" class="popup-overlay">
+    <div class="popup-content">
+      <div clas="close-div">
+      <button type="button" class="close-btn" id="eventClose2" onclick="hideEventOverlay()">&times;</button>
+      </div>
+      <h3>Add New Event</h3>
+      <form id="addEventForm">
+        <label for="eventTitle">Title:</label>
+        <input type="text" id="eventTitle" name="eventTitle" required>
+
+        <label for="eventClub">Club:</label>
+
+        <input type="text" id="eventClub" name="eventClub" disabled>
+        </select>
+
+        <label for="eventDescription">Description:</label>
+        <textarea id="eventDescription" name="eventDescription" required></textarea>
+
+        <label for="eventLocation">Location:</label>
+        <input type="text" id="eventLocation" name="eventLocation" required>
+
+        <label for="eventDate">Date:</label>
+        <input type="date" id="eventDate" name="eventDate" required>
+
+        <label for="eventStartTime">Start Time:</label>
+        <input type="time" id="eventStartTime" name="eventStartTime" required>
+
+        <label for="eventEndTime">End Time:</label>
+        <input type="time" id="eventEndTime" name="eventEndTime" required>
+
+        <button type="submit">Add Event</button>
+      </form>
+    </div>
+  </div>
+
+  <button id="chat-fab" class="chat-fab" onclick="toggleChat()">
+    💬
+</button>
+
+<div id="chat-window" class="chat-window" style="display: none;">
+    <div class="chat-header">
+        <span>Unify AI Assistant</span>
+        <button onclick="toggleChat()">&times;</button>
+    </div>
+    <div id="chat-messages" class="chat-messages">
+        <div class="message bot-message">
+            Hi! I can help you find new clubs. Would you like me to help you do that?
+        </div>
+    </div>
+    <div class="chat-input-area">
+        <input type="text" id="chat-input" placeholder="Type a message..." onkeypress="handleChatEnter(event)">
+        <button onclick="sendChatMessage()">Send</button>
+    </div>
+</div>
+
+
+
+<script src="script.js"></script>
+</body>
+
+<script src="script.js"></script>
+</body>
+  <script src="script.js"></script>
+</body>
+
+</html>
