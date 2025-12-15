@@ -22,7 +22,7 @@ let clubColorMap = {};
 let currentUser = null;
 let unsubscribeListener;
 //HIDE API KEY IF WE PUBLISH TO GIT!!!
-const OPENAI_API_KEY = "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";
+const OPENAI_API_KEY = "MYAPIKEY"
 const calendarprovider = new firebase.auth.GoogleAuthProvider();
 provider.addScope('https://www.googleapis.com/auth/calendar.events');
 provider.addScope('https://www.googleapis.com/auth/tasks');
