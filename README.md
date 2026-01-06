@@ -1,4 +1,4 @@
-Winner of BellHacks Overall
+1st Winner of BellHacks Overall
 https://devpost.com/software/unify-g8sw0d?ref_content=user-portfolio&ref_feature=in_progress
 
 Prize: 2 PS5s
