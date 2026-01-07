@@ -5,7 +5,6 @@
 > **Original Project:** [Tag v0.0.0](https://github.com/pikull/unified-calendar/releases/tag/v0.0.0) - Won **1st Place Overall** at BellHacks 3.0: Prize = PS5 x2.
 > View the original submission on [Devpost](https://devpost.com/software/unify-g8sw0d).
 
----
 
 ## About The Project
 
@@ -68,10 +67,7 @@ To get a local copy up and running, follow these steps.
 
 ## Contact
 
-Akshun Chinara - [Email / Linkedin]
+Akshun Chinara - [Email / Linkedin]\
 Max Zhang - [Email / Linkedin]
 
 Project Link: [https://github.com/pikull/unified-calendar](https://github.com/pikull/unified-calendar)
-
----
-Original Project (commit tag v0.0.0): won 1st place overall (prize = PS5 x2) at [BellHacks 3.0](https://devpost.com/software/unify-g8sw0d)
