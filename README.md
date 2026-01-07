@@ -1,39 +1,77 @@
-1st Winner of BellHacks Overall
-https://devpost.com/software/unify-g8sw0d?ref_content=user-portfolio&ref_feature=in_progress
+# Unify
 
-Prize: 2 PS5s
+> **Legacy Note:**
+> This project originated as a hackathon submission.
+> **Original Project:** [Tag v0.0.0](https://github.com/pikull/unified-calendar/releases/tag/v0.0.0) - Won **1st Place Overall** at BellHacks 3.0: Prize = PS5 x2.
+> View the original submission on [Devpost](https://devpost.com/software/unify-g8sw0d).
 
-#COMMUNITY TRACK
-## Inspiration
-At Irvington High School, clubs are an essential portion of the student community – we have over 95 clubs. And each year, at Maze Day, the main question we hear Freshmen asking is: “What clubs should I join?” At our school, each club has an intro meeting, but if a student misses it (which is often the case for freshmen or for new, less publicized clubs), there’s often not much else they can do to join the club unless their friends notify them for meetings.
+---
 
-## What it does
-We plan to improve the publication gap and student-to-school community opportunity with a unified school calendar. It will list dates and times of club meetings, so you can schedule for yourself whether you want to go to CS or Bio club at lunch next week, or whether you’re interested in the boba club fundraiser after school. It will also have other relevant school information, like school spirit days and after school sports games and fundraisers.
+## About The Project
 
-## How we built it
-We built it on a Firebase server, with two html files: index.html which has the calendar, and clubs.html which has a list of clubs. We wrote a single css and a single javascript file for both of these. We also integrated an LLM chatbot using the ChatGPT API. We have fully functioning google calendar integration for seamless usage.
+Unify is a centralized school calendar platform designed to bridge the communication gap between student clubs and the student body.
 
-## Challenges we ran into
-- initially, blindly copy-pasting code while vibecoding led to inconsistencies and (usually small) bugs
-- google calendar integration was tricky at first
+At Irvington High School, students often struggle to find out when clubs are meeting or how to get involved.
+Unify improves this publication gap and student-to-school community opportunity with an intuitive, unified school calendar.
 
-## Accomplishments that we're proud of
-- our calendar is fully functioning
-- we built it without frameworks
-- chatbot integration
-- instagram embeds
-- google calendar integration
+## Key Features
 
-## What we learned
-- how to develop a website without frameworks
-- how to integrate Google signin authentication and calendar integration
-- how to integrate an AI chatbot
-- how to effectively use AI as a tool for programming rather than an "answer key"
+* **Unified Calendar:** A central view of all school events, allowing students to sign up for meetings.
+* **Club Directory:** A dedicated list of all available clubs with introductory information.
+* **Google Integration:** Seamless Google Sign-in and Google Calendar event integration.
+* **AI Assistant:** Integrated chatbot to help students get personalized club recommendations.
 
-## What's next for Unify
-- rewrite UI with React
-- implement more robust administrative access management
-- pitching our idea to our high school, and other schools too!
+## Built With
 
+This project is currently being overhauled from its original vanilla implementation to a modern React stack.
 
-Linked project website will not work due to privated Google Cloud Console permissions. We are happy to redemo any functionality if interested
+* [React](https://reactjs.org/)
+* [Vite](https://vitejs.dev/)
+* [Firebase](https://firebase.google.com/) (Auth, Firestore, Hosting)
+* [Google Calendar API](https://developers.google.com/calendar)
+
+## Getting Started (in progress)
+
+To get a local copy up and running, follow these steps.
+
+### Prerequisites
+
+* Node.js
+* npm or yarn
+
+### Installation
+
+1.  Clone the repo
+    ```sh
+    git clone [https://github.com/your_username/repo_name.git](https://github.com/your_username/repo_name.git)
+    ```
+2.  Install NPM packages
+    ```sh
+    npm install
+    ```
+3.  Create a `.env` file and add your Firebase and API keys
+    ```js
+    VITE_FIREBASE_API_KEY=your_api_key
+    ...
+    ```
+4.  Run the development server
+    ```sh
+    npm run dev
+    ```
+
+## Roadmap
+
+* [x] **v0.0.0:** Hackathon MVP (Vanilla JS & HTML)
+* [ ] **v1.0.0:** Complete UI overhaul, possibly using React
+* [ ] Implement robust administrative access for club leaders
+* [ ] Expand platform to other high schools
+
+## Contact
+
+Akshun Chinara - [Email / Linkedin]
+Max Zhang - [Email / Linkedin]
+
+Project Link: [https://github.com/pikull/unified-calendar](https://github.com/pikull/unified-calendar)
+
+---
+Original Project (commit tag v0.0.0): won 1st place overall (prize = PS5 x2) at [BellHacks 3.0](https://devpost.com/software/unify-g8sw0d)
